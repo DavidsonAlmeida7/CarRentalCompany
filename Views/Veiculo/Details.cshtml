@@ -1,0 +1,61 @@
+﻿@model CarRentalCompany.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Modelo)</h4>
+    <hr />
+    <table class="table table-hover">
+        <tbody>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Id)</th>
+                <td>@Html.DisplayFor(model => model.Id)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Tipo)</th>
+                <td>@Html.DisplayFor(model => model.Tipo)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Modelo)</th>
+                <td>@Html.DisplayFor(model => model.Modelo)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Ano)</th>
+                <td>@Html.DisplayFor(model => model.Ano)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Cor)</th>
+                <td>@Html.DisplayFor(model => model.Cor)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Valor)</th>
+                <td>R$ @Html.DisplayFor(model => model.Valor)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DescricaoDetalhes)</th>
+                <td>@Html.DisplayFor(model => model.DescricaoDetalhes)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Imagem)</th>
+                <td><img src="~/images/@Html.DisplayFor(model => model.Imagem)" class="rounded float-left" alt="..." style="width: 280px; height: 170px;"></td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataCadastro)</th>
+                <td>@Html.DisplayFor(model => model.DataCadastro)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataAtualizado)</th>
+                <td>@Html.DisplayFor(model => model.DataAtualizado)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

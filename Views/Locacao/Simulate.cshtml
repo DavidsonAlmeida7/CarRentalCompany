@@ -1,0 +1,50 @@
+﻿@model CarRentalCompany.Models.Locacao
+
+@{
+    ViewData["Title"] = "Simulação";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Veículo: @Html.DisplayFor(model => model.Veiculo.Modelo)</h4>
+    <hr />
+    <table class="table table-hover">
+        <tbody>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.TempoAluguelDias)</th>
+                <td>@Html.DisplayFor(model => model.TempoAluguelDias) dia (s)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Valor)</th>
+                <td>R$ @Html.DisplayFor(model => model.Valor)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataRetirada)</th>
+                <td>@Html.DisplayFor(model => model.DataRetirada)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataDevolucao)</th>
+                <td>@Html.DisplayFor(model => model.DataDevolucao)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Cliente)</th>
+                <td>@Html.DisplayFor(model => model.Cliente.Nome)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <form asp-action="Create" method="post">
+        <input type="hidden" asp-for="TempoAluguelDias" />
+        <input type="hidden" asp-for="Valor"/>
+        <input type="hidden" asp-for="DataRetirada" />
+        <input type="hidden" asp-for="DataDevolucao" />
+        <input type="hidden" asp-for="Cliente.Id" />
+        <input type="hidden" asp-for="Veiculo.Id" />
+
+        <a asp-controller="Locacao" asp-action="Reserve" asp-route-id="@Model.Veiculo.Id" class="btn btn-secondary">Voltar</a>
+        <input type="submit" value="Confirmar" class="btn btn-success" onclick="return confirm('Deseja realmente confirmar o aluguel desse veículo?')" />
+    </form>
+</div>

@@ -1,0 +1,48 @@
+﻿@model CarRentalCompany.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Nome)</h4>
+    <hr />
+    <table class="table table-hover">
+        <tbody>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Id)</th>
+                <td>@Html.DisplayFor(model => model.Id)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Nome)</th>
+                <td>@Html.DisplayFor(model => model.Nome)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Email)</th>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataNascimento)</th>
+                <td>@Html.DisplayFor(model => model.DataNascimento)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.SalarioBase)</th>
+                <td>R$ @Html.DisplayFor(model => model.SalarioBase)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataCadastro)</th>
+                <td>@Html.DisplayFor(model => model.DataCadastro)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataAtualizado)</th>
+                <td>@Html.DisplayFor(model => model.DataAtualizado)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

@@ -1,0 +1,74 @@
+﻿@model CarRentalCompany.Models.Locacao
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Veículo: @Html.DisplayFor(model => model.Veiculo.Modelo)</h4>
+    <hr />
+    <table class="table table-hover">
+        <tbody>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Id)</th>
+                <td>@Html.DisplayFor(model => model.Id)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Status)</th>
+                <td>@Html.DisplayFor(model => model.Status)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Valor)</th>
+                <td>R$ @Html.DisplayFor(model => model.Valor)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataRetirada)</th>
+                <td>@Html.DisplayFor(model => model.DataRetirada)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataDevolucao)</th>
+                <td>@Html.DisplayFor(model => model.DataDevolucao)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataAtiva)</th>
+                <td>@Html.DisplayFor(model => model.DataAtiva)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataFinalizada)</th>
+                <td>@Html.DisplayFor(model => model.DataFinalizada)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.DataCancelada)</th>
+                <td>@Html.DisplayFor(model => model.DataCancelada)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">Tempo da reserva</th>
+                <td>1 mês</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Cliente.Nome)</th>
+                <td>@Html.DisplayFor(model => model.Cliente.Nome)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Veiculo.Modelo)</th>
+                <td>@Html.DisplayFor(model => model.Veiculo.Modelo)</td>
+            </tr>
+
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Veiculo.DescricaoDetalhes)</th>
+                <td>@Html.DisplayFor(model => model.Veiculo.DescricaoDetalhes)</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">@Html.DisplayNameFor(model => model.Veiculo.Imagem)</th>
+                <td><img src="~/images/@Html.DisplayFor(model => model.Veiculo.Imagem)" class="rounded float-left" alt="..." style="width: 280px; height: 170px;"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a asp-action="Cancel" asp-route-id="@Model.Id" class="btn btn-danger">Cancelar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+</div>

@@ -1,0 +1,36 @@
+﻿@model CarRentalCompany.Models.Locacao
+
+@{
+    ViewData["Title"] = "Selecione a melhor data de retirada e devolução para você";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Simulate" method="post">
+            <div class="form-group mt-2">
+                <label asp-for="DataRetirada" class="form-label"></label>
+                <input asp-for="DataRetirada" class="form-control" min="@ViewData["minDate"]" />
+                <span asp-validation-for="DataRetirada" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2" id="data-devolucao">
+                <label asp-for="DataDevolucao" class="form-label"></label>
+                <input asp-for="DataDevolucao" class="form-control" />
+                <span asp-validation-for="DataDevolucao" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Cliente.Email" class="control-label"></label>
+                <input asp-for="Cliente.Email" class="form-control" />
+                <span asp-validation-for="Cliente.Email" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="hidden" name="veiculoId" value="@ViewData["veiculoId"]" />
+            </div>
+            <div class="form-group mt-4">
+                <a asp-controller="Veiculo" asp-action="Dash" class="btn btn-secondary">Voltar</a>
+                <input type="submit" value="Simular" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
